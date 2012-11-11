@@ -12,6 +12,8 @@ class Globals {
   public static inline var GAME_HEIGHT:Int = 480;
   public static inline var GAME_SCALE:Int = 1;
 
+  public static var GAME_PAUSE:Bool = false;
+
   public static inline var PLAYER_WIDTH:Int = 64;
   public static inline var PLAYER_HEIGHT:Int = 64;
   public static var PLAYER:Player = null;

@@ -14,6 +14,7 @@ class Ball extends FlxSprite {
   }
 
   override public function update( ):Void {
+    super.update( );
     if ( this.x < 0 || this.x > Globals.WORLD_WIDTH ) {
       this.velocity.x = -this.velocity.x;
       this.acceleration.x = -this.acceleration.x;

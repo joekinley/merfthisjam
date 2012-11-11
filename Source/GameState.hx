@@ -69,20 +69,29 @@ class GameState extends FlxState {
   }
 
   public function initializeCamera( ):Void {
-    FlxG.camera.follow( Globals.BALL, FlxCamera.STYLE_TOPDOWN );
+    FlxG.camera.follow( Globals.PLAYER, FlxCamera.STYLE_TOPDOWN );
     FlxG.camera.setBounds( 0, 0, Globals.WORLD_WIDTH, Globals.WORLD_HEIGHT );
     FlxG.worldBounds = new FlxRect( 0, 0, Globals.WORLD_WIDTH, Globals.WORLD_HEIGHT );
   }
 
   override public function update( ):Void {
-    super.update( );
     this.debug( );
+    super.update( );
+
+    // handle game stats
+    this.handleGameStatus( );
 
     FlxG.collide( this.layer_player, this.layer_ball );
+  }
+
+  public function handleGameStatus( ):Void {
+    if ( Globals.GAME_PAUSE ) FlxG.timeScale = 0;
+    else FlxG.timeScale = 1;
   }
 
   public function debug( ):Void {
     if ( FlxG.keys.justPressed( 'ONE' ) ) FlxG.camera.zoom -= 0.2;
     if ( FlxG.keys.justPressed( 'TWO' ) ) FlxG.camera.zoom += 0.2;
+    if ( FlxG.keys.justPressed( 'SPACE' ) ) Globals.GAME_PAUSE = !Globals.GAME_PAUSE;
   }
 }
