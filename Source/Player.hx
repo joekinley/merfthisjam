@@ -25,17 +25,23 @@ class Player extends FlxSprite {
   override public function update( ):Void {
     super.update( );
     this.handleEvents( );
+    this.handleBounds( );
+  }
+
+  private function handleBounds( ):Void {
+    if ( this.x < 0 ) this.x = 0;
+    if ( this.x > Globals.WORLD_WIDTH ) this.x = Globals.WORLD_WIDTH;
+    if ( this.y < 0 ) this.y = 0;
+    if ( this.y > Globals.WORLD_HEIGHT ) this.y = Globals.WORLD_HEIGHT;
   }
 
   private function handleEvents( ):Void {
     var distCur:Float;
 
-    if ( FlxG.mouse.justPressed( ) ) {
+    if ( FlxG.mouse.pressed( ) ) {
       this.running = true;
       this.destPoint = FlxG.mouse.getWorldPosition( );
-      FlxVelocity.accelerateTowardsMouse( this, 200, 400, 400 );
-      //this.x = FlxG.mouse.x;
-      //this.y = FlxG.mouse.y;
+      FlxVelocity.accelerateTowardsPoint( this, destPoint, 200, 400, 400 );
     }
 
     // check reached

@@ -9,7 +9,7 @@ import org.flixel.FlxSprite;
 class Field extends FlxSprite {
 
   public function new() {
-    super( 0, 0 );
+    super( 64, 64 );
     this.makeGraphic( Globals.FIELD_WIDTH, Globals.FIELD_HEIGHT, 0xFF00FF00 );
   }
 

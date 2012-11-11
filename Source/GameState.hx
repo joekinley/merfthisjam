@@ -1,6 +1,8 @@
 package ;
+import org.flixel.FlxCamera;
 import org.flixel.FlxG;
 import org.flixel.FlxGroup;
+import org.flixel.FlxRect;
 import org.flixel.FlxState;
 
 /**
@@ -24,6 +26,8 @@ class GameState extends FlxState {
 
     // initialize layers
     this.initializeLayers( );
+    // initialize world
+    this.initializeWorld( );
     // initialize field
     this.initializeField( );
     // initialize player
@@ -44,6 +48,11 @@ class GameState extends FlxState {
     this.add( this.layer_ball );
   }
 
+  public function initializeWorld( ):Void {
+    Globals.WORLD = new World( );
+    this.layer_field.add( Globals.WORLD );
+  }
+
   public function initializeField( ):Void {
     Globals.FIELD = new Field( );
     this.layer_field.add( Globals.FIELD );
@@ -60,7 +69,9 @@ class GameState extends FlxState {
   }
 
   public function initializeCamera( ):Void {
-
+    FlxG.camera.follow( Globals.BALL, FlxCamera.STYLE_TOPDOWN );
+    FlxG.camera.setBounds( 0, 0, Globals.WORLD_WIDTH, Globals.WORLD_HEIGHT );
+    FlxG.worldBounds = new FlxRect( 0, 0, Globals.WORLD_WIDTH, Globals.WORLD_HEIGHT );
   }
 
   override public function update( ):Void {
