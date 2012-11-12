@@ -14,6 +14,7 @@ class Player extends FlxSprite {
   private var destPoint:FlxPoint;
   private var distLast:Float;
   private var running:Bool;
+  private var _selected:Bool;
 
   public function new() {
     super( 10, 10 );
@@ -38,7 +39,7 @@ class Player extends FlxSprite {
   private function handleEvents( ):Void {
     var distCur:Float;
 
-    if ( FlxG.mouse.pressed( ) ) {
+    if ( this.selected && FlxG.mouse.justReleased( ) ) {
       this.running = true;
       this.destPoint = FlxG.mouse.getWorldPosition( );
       FlxVelocity.accelerateTowardsPoint( this, destPoint, 200, 400, 400 );
@@ -57,5 +58,31 @@ class Player extends FlxSprite {
       this.distLast = distCur;
     }
   }
+
+  public function calculateBallProximity( ):Void {
+    var distToBall:Float = FlxVelocity.distanceBetween( this, Globals.BALL );
+  }
+
+  public function select( ):Void {
+    this.color = 0xFFFF00FF;
+    this.selected = true;
+    this.makeGraphic( Globals.PLAYER_WIDTH, Globals.PLAYER_HEIGHT, 0xFFFF00FF );
+  }
+
+  public function unselect( ):Void {
+    this.color = 0xFF0000FF;
+    this.selected = false;
+    this.makeGraphic( Globals.PLAYER_WIDTH, Globals.PLAYER_HEIGHT, 0xFF0000FF );
+  }
+
+  private function get_selected():Bool {
+    return _selected;
+  }
+
+  private function set_selected(value:Bool):Bool {
+    return _selected = value;
+  }
+
+  public var selected(get_selected, set_selected):Bool;
 
 }

@@ -1,4 +1,5 @@
 package ;
+import org.flixel.FlxGroup;
 import org.flixel.plugin.photonstorm.FlxCollision;
 
 /**
@@ -14,9 +15,16 @@ class Globals {
 
   public static var GAME_PAUSE:Bool = false;
 
+  public static var CAMERA_SPEED:Float = 20.0;
+
+  //public static var LAYER_PLAYER:FlxGroup = null;
+
+  public static var PLAYER_MANAGER:PlayerManager = null;
+
+  public static inline var PLAYER_COUNT:Int = 5; // amount of players in a team
   public static inline var PLAYER_WIDTH:Int = 64;
   public static inline var PLAYER_HEIGHT:Int = 64;
-  public static var PLAYER:Player = null;
+  //public static var PLAYER:Player = null;
 
   public static inline var BALL_WIDTH:Int = 15;
   public static inline var BALL_HEIGHT:Int = 15;
@@ -28,6 +36,7 @@ class Globals {
 
   public static inline var FIELD_WIDTH:Int = 640;
   public static inline var FIELD_HEIGHT:Int = 960;
+  public static inline var FIELD_OFFSET:Int = 64;
   public static var FIELD:Field = null;
 
   public function new() {
