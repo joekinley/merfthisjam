@@ -16,6 +16,7 @@ class PlayerManager {
   private var formation:Array<FlxPoint>;
   private var _players:FlxGroup;
   private var selectedPlayer:Player;
+  private var _clickedPlayer:Bool;
 
   public function new() {
     this.selectedPlayer = null;
@@ -54,25 +55,54 @@ class PlayerManager {
 
   public var players(get_players, set_players):FlxGroup;
 
+  private function get_clickedPlayer():Bool {
+    return _clickedPlayer;
+  }
+
+  private function set_clickedPlayer(value:Bool):Bool {
+    return _clickedPlayer = value;
+  }
+
+  public var clickedPlayer(get_clickedPlayer, set_clickedPlayer):Bool;
+
+  public function justClickedPlayer( ):Bool {
+    return this.clickedPlayer;
+  }
+
+  /**
+   * UPDATE FUNCTION
+   */
   public function update( ):Void {
 
+    this.clickedPlayer = false;
     this.handleEvents( );
+
   }
 
   private function handleEvents( ):Void {
-    if ( FlxG.mouse.justReleased( ) ) {
+    if ( !Globals.STATE_GAME.overviewActivated && FlxG.mouse.justReleased( ) ) {
       FlxG.overlap( new FlxSprite( FlxG.mouse.getWorldPosition( ).x, FlxG.mouse.getWorldPosition( ).y ), this.players, clickPlayer );
     }
   }
 
+  public function clickAction( type:Int ):Void {
+    switch( type ) {
+      case Globals.BUTTON_ATTACK_BALL:
+        this.selectedPlayer.attackBall( );
+      default:
+        this.selectedPlayer.runToPoint( );
+    }
+  }
+
   private function clickPlayer( point:FlxObject, player:FlxObject ):Void {
+    this.clickedPlayer = true;
     var pl:Player = cast player;
     this.unselectPlayers( );
     pl.select( );
     this.selectedPlayer = pl;
   }
 
-  private function unselectPlayers( ):Void {
+  public function unselectPlayers( ):Void {
     var i:Int = 0;
     var player:Player = null;
     while ( i < this.players.length ) {

@@ -31,31 +31,26 @@ class Player extends FlxSprite {
 
   private function handleBounds( ):Void {
     if ( this.x < 0 ) this.x = 0;
-    if ( this.x > Globals.WORLD_WIDTH ) this.x = Globals.WORLD_WIDTH;
+    if ( this.x > Globals.WORLD_WIDTH - this.width ) this.x = Globals.WORLD_WIDTH - this.width;
     if ( this.y < 0 ) this.y = 0;
-    if ( this.y > Globals.WORLD_HEIGHT ) this.y = Globals.WORLD_HEIGHT;
+    if ( this.y > Globals.WORLD_HEIGHT - this.height ) this.y = Globals.WORLD_HEIGHT - this.height;
   }
 
   private function handleEvents( ):Void {
     var distCur:Float;
 
-    if ( this.selected && FlxG.mouse.justReleased( ) ) {
-      this.running = true;
-      this.destPoint = FlxG.mouse.getWorldPosition( );
-      FlxVelocity.accelerateTowardsPoint( this, destPoint, 200, 400, 400 );
-    }
-
     // check reached
     if ( this.running ) {
       distCur = FlxVelocity.distanceToPoint( this, this.destPoint );
       if( distCur < 16 || this.distLast < distCur ) {
-        this.velocity.x = 0;
-        this.velocity.y = 0;
-        this.acceleration.x = 0;
-        this.acceleration.y = 0;
         this.running = false;
       }
       this.distLast = distCur;
+    } else {
+      this.velocity.x = 0;
+      this.velocity.y = 0;
+      this.acceleration.x = 0;
+      this.acceleration.y = 0;
     }
   }
 
@@ -85,4 +80,18 @@ class Player extends FlxSprite {
 
   public var selected(get_selected, set_selected):Bool;
 
+
+  public function runToPoint( ):Void {
+    this.running = true;
+    this.destPoint = FlxG.mouse.getWorldPosition( );
+    FlxVelocity.accelerateTowardsPoint( this, destPoint, 200, 400, 400 );
+    this.distLast = Globals.WORLD_WIDTH;
+  }
+
+  public function attackBall( ):Void {
+    FlxVelocity.accelerateTowardsObject( this, Globals.BALL, 200, 400, 400 );
+    this.running = true;
+    this.destPoint = Globals.BALL.getMidpoint( );
+    this.distLast = Globals.WORLD_WIDTH;
+  }
 }

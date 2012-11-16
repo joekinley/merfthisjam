@@ -1,11 +1,17 @@
 package;
 
 import org.flixel.FlxGame;
+#if flash
+import org.flashdevelop.utils.FlashConnect;
+#end
 
 class Game extends FlxGame
 {
 	public function new()
 	{
-		super( Globals.GAME_WIDTH, Globals.GAME_HEIGHT, GameState, Globals.GAME_SCALE );
+    #if flash
+    FlashConnect.redirect();
+    #end
+		super( Globals.GAME_WIDTH, Globals.GAME_HEIGHT, MenuState, Globals.GAME_SCALE );
 	}
 }

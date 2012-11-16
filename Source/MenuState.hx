@@ -20,8 +20,12 @@ class MenuState extends FlxState
 		FlxG.bgColor = 0xff131c1b;
 		#else
 		FlxG.bgColor = {rgb: 0x131c1b, a: 0xff};
-		#end		
+		#end
 		FlxG.mouse.show();
+
+    // initialize available game states
+    Globals.STATE_GAME = new GameState( );
+    FlxG.switchState( Globals.STATE_GAME );
 	}
 	
 	override public function destroy():Void
@@ -32,5 +36,5 @@ class MenuState extends FlxState
 	override public function update():Void
 	{
 		super.update();
-	}	
+	}
 }

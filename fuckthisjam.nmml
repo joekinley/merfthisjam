@@ -15,6 +15,7 @@
 	<!--<setenv name="no_console" value="1" />-->
 	
 	<classpath name="Source" />
+  <classpath name="C:\Program Files\FlashDevelop\Library\HAXE\classes\" />
 	
 	<haxelib name="nme" />
 	<haxelib name="flixel"/>

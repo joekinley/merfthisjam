@@ -17,13 +17,18 @@ class GameState extends FlxState {
   private var layer_player:FlxGroup;
   private var layer_ball:FlxGroup;
   private var layer_overlay:FlxGroup;
+  private var layer_hud:FlxGroup;
 
   private var overlayMenu:OverlayMenu;
+  private var hud:HUD;
+  private var overview:OverviewState;
+  private var _overviewActivated:Bool;
 
   private var lastClick:FlxPoint;
 
   public function new() {
     super( );
+    this.overviewActivated = false;
   }
 
   override public function create( ):Void {
@@ -44,6 +49,10 @@ class GameState extends FlxState {
     this.initializeCamera( );
     // initialize overlay menu
     this.initializeOverlayMenu( );
+    // initialize hud
+    this.initializeHUD( );
+    // initialize overview
+    this.initializeOverview( );
   }
 
   public function initializeLayers( ):Void {
@@ -51,11 +60,13 @@ class GameState extends FlxState {
     this.layer_player = new FlxGroup( );
     this.layer_ball = new FlxGroup( );
     this.layer_overlay = new FlxGroup( );
+    this.layer_hud = new FlxGroup( );
 
     this.add( this.layer_field );
     this.add( this.layer_player );
     this.add( this.layer_ball );
     this.add( this.layer_overlay );
+    this.add( this.layer_hud );
   }
 
   public function initializeWorld( ):Void {
@@ -90,24 +101,35 @@ class GameState extends FlxState {
     this.layer_overlay.add( this.overlayMenu.display );
   }
 
+  public function initializeHUD( ):Void {
+    this.hud = new HUD( );
+    this.layer_hud.add( this.hud.layer );
+  }
+
+  public function initializeOverview( ):Void {
+    this.overview = new OverviewState( );
+  }
+
+  /**
+   * UPDATE FUNCTION
+   */
   override public function update( ):Void {
-    this.debug( );
     super.update( );
 
-    // handle game stats
-    this.handleGameStatus( );
     this.handleMoveCamera( );
+    this.handlePlayerMenu( );
+
+    this.overlayMenu.update( );
+    this.hud.update( );
+    if ( this.overview.activated ) this.overview.update( );
 
     Globals.PLAYER_MANAGER.update( );
     FlxG.collide( this.layer_player, this.layer_ball );
-  }
-
-  public function handleGameStatus( ):Void {
-    if ( Globals.GAME_PAUSE ) FlxG.timeScale = 0;
-    else FlxG.timeScale = 1;
+    this.debug( );
   }
 
   private function handleMoveCamera( ):Void {
+    if ( this.overviewActivated ) return;
     if ( FlxG.mouse.justPressed( ) ) {
       lastClick.x = FlxG.mouse.screenX;
       lastClick.y = FlxG.mouse.screenY;
@@ -119,12 +141,52 @@ class GameState extends FlxState {
       lastClick.x = FlxG.mouse.screenX;
       lastClick.y = FlxG.mouse.screenY;
     }
+
+    #if flash
+    if ( FlxG.keys.LEFT || FlxG.keys.A ) FlxG.camera.scroll.x -= 15;
+    else if ( FlxG.keys.RIGHT || FlxG.keys.D ) FlxG.camera.scroll.x += 15;
+    if ( FlxG.keys.UP || FlxG.keys.W ) FlxG.camera.scroll.y -= 15;
+    else if ( FlxG.keys.DOWN || FlxG.keys.S ) FlxG.camera.scroll.y += 15;
+    #end
+  }
+
+  private function handlePlayerMenu( ):Void {
+    if ( Globals.PLAYER_MANAGER.justClickedPlayer( ) ) {
+      this.overlayMenu.activateOverlay( );
+    }
+  }
+
+  public function toggleOverview( ):Void {
+    if ( this.overview.activated ) this.deactivateOverview( );
+    else this.activateOverview( );
+  }
+
+  public function activateOverview( ):Void {
+    this.overview.activate( );
+    this.layer_overlay.add( this.overview.layer );
+    this.overviewActivated = true;
+  }
+
+  public function deactivateOverview( ):Void {
+    this.overview.deactivate( );
+    this.layer_overlay.remove( this.overview.layer );
+    this.overviewActivated = false;
   }
 
   public function debug( ):Void {
-    if ( FlxG.keys.justPressed( 'ONE' ) ) FlxG.camera.zoom -= 0.2;
-    if ( FlxG.keys.justPressed( 'TWO' ) ) FlxG.camera.zoom += 0.2;
+    if ( FlxG.keys.justPressed( 'ONE' ) ) trace( 'NOT SET' );
+    if ( FlxG.keys.justPressed( 'TWO' ) ) trace( 'NOT SET' );
     if ( FlxG.keys.justPressed( 'SPACE' ) ) Globals.GAME_PAUSE = !Globals.GAME_PAUSE;
     if ( FlxG.keys.justPressed( 'THREE' ) ) this.overlayMenu.toggleOverlay( );
   }
+
+  private function get_overviewActivated():Bool {
+    return _overviewActivated;
+  }
+
+  private function set_overviewActivated(value:Bool):Bool {
+    return _overviewActivated = value;
+  }
+
+  public var overviewActivated(get_overviewActivated, set_overviewActivated):Bool;
 }
