@@ -14,7 +14,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.0 r9654"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="world.svg"
+   inkscape:export-filename="/Users/joe/Documents/Flash/fuckthisjam/Assets/graphics/world.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4">
     <filter
@@ -114,7 +117,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
      inkscape:cx="427.9126"
-     inkscape:cy="678.26963"
+     inkscape:cy="563.98391"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"

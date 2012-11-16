@@ -14,7 +14,10 @@
    id="svg4375"
    version="1.1"
    inkscape:version="0.48.0 r9654"
-   sodipodi:docname="New document 4">
+   sodipodi:docname="field.svg"
+   inkscape:export-filename="/Users/joe/Documents/Flash/fuckthisjam/Assets/graphics/field.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4377">
     <pattern
@@ -94,6 +97,93 @@
          mode="normal"
          in="result2" />
     </filter>
+    <filter
+       id="filter5072"
+       inkscape:label="Torn edges"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Displace the outside of shapes and pictures without altering their content"
+       height="1.4"
+       y="-0.2"
+       width="1.4"
+       x="-0.2"
+       color-interpolation-filters="sRGB">
+      <feTurbulence
+         id="feTurbulence5074"
+         baseFrequency="0.05"
+         numOctaves="5"
+         type="fractalNoise"
+         result="result91" />
+      <feDisplacementMap
+         id="feDisplacementMap5076"
+         in2="result91"
+         scale="25"
+         result="result5"
+         xChannelSelector="R"
+         in="SourceGraphic" />
+      <feComposite
+         id="feComposite5078"
+         in2="result5"
+         in="SourceGraphic"
+         operator="atop" />
+    </filter>
+    <filter
+       id="filter5108"
+       inkscape:label="Torn edges"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Displace the outside of shapes and pictures without altering their content"
+       height="1.4"
+       y="-0.2"
+       width="1.4"
+       x="-0.2"
+       color-interpolation-filters="sRGB">
+      <feTurbulence
+         id="feTurbulence5110"
+         baseFrequency="0.05"
+         numOctaves="5"
+         type="fractalNoise"
+         result="result91" />
+      <feDisplacementMap
+         id="feDisplacementMap5112"
+         in2="result91"
+         scale="25"
+         result="result5"
+         xChannelSelector="R"
+         in="SourceGraphic" />
+      <feComposite
+         id="feComposite5114"
+         in2="result5"
+         in="SourceGraphic"
+         operator="atop" />
+    </filter>
+    <filter
+       id="filter5118"
+       inkscape:label="Torn edges"
+       inkscape:menu="Distort"
+       inkscape:menu-tooltip="Displace the outside of shapes and pictures without altering their content"
+       height="1.4"
+       y="-0.2"
+       width="1.4"
+       x="-0.2"
+       color-interpolation-filters="sRGB">
+      <feTurbulence
+         id="feTurbulence5120"
+         baseFrequency="0.05"
+         numOctaves="5"
+         type="fractalNoise"
+         result="result91" />
+      <feDisplacementMap
+         id="feDisplacementMap5122"
+         in2="result91"
+         scale="25"
+         result="result5"
+         xChannelSelector="R"
+         in="SourceGraphic" />
+      <feComposite
+         id="feComposite5124"
+         in2="result5"
+         in="SourceGraphic"
+         operator="atop" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -102,9 +192,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="290.46636"
-     inkscape:cy="802.29452"
+     inkscape:zoom="0.35"
+     inkscape:cx="276.05059"
+     inkscape:cy="578.33768"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -112,7 +202,31 @@
      inkscape:window-height="669"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="0" />
+     inkscape:window-maximized="0"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-global="false">
+    <sodipodi:guide
+       orientation="1,0"
+       position="20.203051,262.63966"
+       id="guide5096" />
+    <sodipodi:guide
+       orientation="1,0"
+       position="620.23366,630.33519"
+       id="guide5098" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="386.38335,939.94694"
+       id="guide5100" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="505.71429,20"
+       id="guide5102" />
+    <sodipodi:guide
+       orientation="0,1"
+       position="-800.71429,480"
+       id="guide5104" />
+  </sodipodi:namedview>
   <metadata
      id="metadata4380">
     <rdf:RDF>
@@ -141,5 +255,40 @@
        id="rect4438"
        style="fill:#1fa41f;fill-opacity:1;fill-rule:nonzero;stroke:none;filter:url(#filter4487)"
        d="m 0,92.362183 640,0 0,47.999997 -640,0 z m 0,95.999997 640,0 0,48 -640,0 z m 0,96 640,0 0,48 -640,0 z m 0,96 640,0 0,48 -640,0 z m 0,96 640,0 0,48 -640,0 z m 0,96 640,0 0,48 -640,0 z m 0,96 640,0 0,48 -640,0 z m 0,96 640,0 0,48 -640,0 z m 0,96 640,0 0,48 -640,0 z m 0,96 640,0 0,48.00002 -640,0 z" />
+    <g
+       id="g5092"
+       style="stroke:#ffffff"
+       transform="matrix(1.0439812,0,0,1.0271075,1109.535,197.37505)">
+      <rect
+         transform="matrix(0.96366137,0,0,0.97599228,-1064.3965,-192.96379)"
+         style="fill:none;stroke:#ffffff;stroke-width:20.01728821;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter5072)"
+         id="rect5070"
+         width="619.98267"
+         height="939.98273"
+         x="10.008644"
+         y="102.37081" />
+      <path
+         id="rect5034"
+         d="m -1066.0162,-104.33409 619.98263,0 0,939.98273 -619.98263,0 z"
+         style="fill:none;stroke:#ffffff;stroke-width:20.01728821;stroke-miterlimit:4"
+         inkscape:connector-curvature="0" />
+    </g>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;filter:url(#filter5108)"
+       id="rect5106"
+       width="640"
+       height="20"
+       x="-3.1866891"
+       y="562.36218" />
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#ffffff;stroke-width:20;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter5118)"
+       id="path5116"
+       sodipodi:cx="20"
+       sodipodi:cy="304.28571"
+       sodipodi:rx="200"
+       sodipodi:ry="200"
+       d="m 220,304.28571 a 200,200 0 1 1 -400,0 200,200 0 1 1 400,0 z"
+       transform="matrix(0.71868584,0,0,0.71868584,305.62629,353.67635)" />
   </g>
 </svg>
