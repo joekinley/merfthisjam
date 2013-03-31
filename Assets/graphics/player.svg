@@ -55,9 +55,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.959798"
-     inkscape:cx="32.642136"
-     inkscape:cy="282.58165"
+     inkscape:zoom="2.8"
+     inkscape:cx="85.957718"
+     inkscape:cy="254.11835"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -180,6 +180,51 @@
            sodipodi:cy="35.535713"
            sodipodi:cx="31.785715"
            id="path6813"
+           style="fill:#ffccaa;fill-opacity:1;fill-rule:nonzero;stroke:none;filter:url(#filter6759)"
+           sodipodi:type="arc" />
+      </g>
+    </g>
+    <g
+       transform="translate(105.45431,305.43945)"
+       id="g7004">
+      <rect
+         ry="3.0930426"
+         rx="3.7060027"
+         y="438.44199"
+         x="50.760166"
+         height="11.616755"
+         width="8.586297"
+         id="rect7006"
+         style="fill:#ffccaa;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <rect
+         style="fill:#ffccaa;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="rect7008"
+         width="8.586297"
+         height="11.616755"
+         x="4.7982249"
+         y="438.44199"
+         rx="3.7060027"
+         ry="3.0930426" />
+      <g
+         id="g7010"
+         transform="matrix(0.87338295,0,0,0.93923755,4.6052525,26.435657)">
+        <rect
+           rx="3.7060027"
+           ry="6.9257255"
+           y="430.81567"
+           x="6.4539528"
+           height="29.186983"
+           width="49.862583"
+           id="rect7012"
+           style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+        <path
+           transform="matrix(1.894991,0,0,1.5437126,-28.8484,385.9553)"
+           d="m 40.000001,35.535713 c 0,5.029736 -3.677661,9.107143 -8.214286,9.107143 -4.536625,0 -8.214286,-4.077407 -8.214286,-9.107143 0,-5.029736 3.677661,-9.107142 8.214286,-9.107142 4.536625,0 8.214286,4.077406 8.214286,9.107142 z"
+           sodipodi:ry="9.1071424"
+           sodipodi:rx="8.2142859"
+           sodipodi:cy="35.535713"
+           sodipodi:cx="31.785715"
+           id="path7014"
            style="fill:#ffccaa;fill-opacity:1;fill-rule:nonzero;stroke:none;filter:url(#filter6759)"
            sodipodi:type="arc" />
       </g>

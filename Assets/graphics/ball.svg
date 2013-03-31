@@ -10,11 +10,14 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="45"
-   height="45"
+   height="15"
    id="svg6815"
    version="1.1"
    inkscape:version="0.48.0 r9654"
-   sodipodi:docname="New document 10">
+   sodipodi:docname="ball.svg"
+   inkscape:export-filename="/Users/joe/Documents/Flash/fuckthisjam/Assets/graphics/ball.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs6817" />
   <sodipodi:namedview
@@ -24,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="16.784898"
-     inkscape:cx="22.627211"
-     inkscape:cy="37.662956"
+     inkscape:zoom="8.3924492"
+     inkscape:cx="22.994707"
+     inkscape:cy="7.5946884"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -62,10 +65,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-1007.3622)">
+     transform="translate(0,-1037.3622)">
     <g
        id="g6964"
-       transform="translate(-22.710095,15.609269)">
+       transform="translate(-22.710095,45.60922)">
       <path
          sodipodi:type="arc"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000"
@@ -83,7 +86,7 @@
          style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" />
     </g>
     <g
-       transform="matrix(0.90443616,0.42609016,-0.42609016,0.90443616,420.94875,98.229448)"
+       transform="matrix(0.90443616,0.42609016,-0.42609016,0.90443616,420.94875,128.2294)"
        id="g6968">
       <path
          transform="matrix(0.9375,0,0,0.9375,23.178845,992.22173)"
@@ -103,7 +106,7 @@
     </g>
     <g
        id="g6974"
-       transform="matrix(0.72118292,0.6924253,-0.6924253,0.72118292,707.62104,273.29979)">
+       transform="matrix(0.72134162,0.69257767,-0.69257767,0.72134162,707.7685,303.1366)">
       <path
          sodipodi:type="arc"
          style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000"
